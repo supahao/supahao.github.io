@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chenjiahao's homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #fefaf4;          /* 你截图里的那种很浅的橙奶色 */
+      --ink: #1a1a1a;         /* 主文字几乎黑的颜色 */
+      --muted: #6f665c;       /* 次要说明文字 */
+      --line: #d9cec1;        /* 分割线：很浅的米棕色 */
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.7;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 28px 80px;
+      box-sizing: border-box;
+    }
+
+    /* 简化后的头部区域 */
+    .hero {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+
+    /* 分割线 */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 46px 0 32px;
+    }
+
+    /* Research 区域 */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title small {
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .notes {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+
+    .pub-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      margin-top: 24px;
+    }
+
+    .pub-item {
+      margin-bottom: 22px;
+    }
+
+    .pub-title {
+      font-weight: 700;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 850px) {
+      .hero {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header style="text-align: center; margin-bottom: 40px;">
+      <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 8px;">Jiahao Chen <span style="font-size: 1.1rem; font-weight: normal;">陈嘉豪</span></h1>
+      <p style="margin-bottom: 20px; font-size: 1rem;">
+        <a href="https://github.com/supahao" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px; margin-right: 15px;">GitHub</a> ·
+        <a href="https://scholar.google.com/citations?user=ovnrE3wAAAAJ&hl=en" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px; margin-right: 15px;">Google Scholar</a> ·
+        <a href="mailto:jiahaochen1@link.cuhk.edu.cn" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px;">Email</a>
+      </p>
+    </header>
+
+    <div style="max-width: 720px; margin: 0 auto 60px;">
+      <h2 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">Hi 👋</h2>
+      <p style="line-height: 1.8; margin-bottom: 12px;">I'm an intern at <strong>Moonshot AI</strong> RL team (2025), and a second-year MSc student in Data Science at <strong>CUHK(SZ)</strong>.</p>
+      <p style="line-height: 1.8; margin-bottom: 0;">My research focuses on applying reinforcement learning algorithms in LLM training and post-training. I'm particularly interested in scalable methods to enhance reasoning and decision-making capabilities of language model agents.</p>
+
+      <p style="margin-top: 20px; margin-bottom: 0; line-height: 1.8;">
+        <strong>Currently, I am actively seeking full-time opportunities starting late 2025/early 2026 in LLM post-training and RL research! For potential collaborations, I am particularly excited about developing scalable RL methods to enhance language model reasoning and capability.<br/><em>Expected graduation: 2026</em></strong>
+      </p>
+    </div>
+
+    <hr class="section-divider" />
+
+    <section>
+      <div class="section-title">Research/Events</div>
+
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-title">Kimi K2 Thinking</div>
+          <div class="pub-meta">Announcement <a href="https://moonshotai.github.io/Kimi-K2/thinking.html">https://moonshotai.github.io/Kimi-K2/thinking.html</a></div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">Kimi K2</div>
+          <div class="pub-meta">Announcement <a href="https://moonshotai.github.io/Kimi-K2/">https://moonshotai.github.io/Kimi-K2/</a> | Technical Report <a href="https://arxiv.org/pdf/2507.20534">https://arxiv.org/pdf/2507.20534</a></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
