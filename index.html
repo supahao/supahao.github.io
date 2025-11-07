@@ -4,12 +4,18 @@
   <meta charset="utf-8" />
   <title>Jiahao Chen's homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 关键：拉一套比较像她主页的衬线体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #fefaf4;          /* 你截图里的那种很浅的橙奶色 */
-      --ink: #1a1a1a;         /* 主文字几乎黑的颜色 */
-      --muted: #6f665c;       /* 次要说明文字 */
-      --line: #d9cec1;        /* 分割线：很浅的米棕色 */
+      --bg: #fef6ed;          /* 更接近截图里那种奶橘色 */
+      --ink: #1a1a1a;
+      --muted: #6f665c;
+      --line: #d9cec1;
     }
 
     html, body {
@@ -17,12 +23,15 @@
       background: var(--bg);
     }
 
+    /* 全站字体换成衬线 */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      line-height: 1.7;
+      /* Lora 负责西文, Noto Serif SC 负责中文, 最后是兜底 serif */
+      font-family: "Lora", "Noto Serif SC", "Songti SC", "Source Han Serif SC", "Times New Roman", serif;
+      line-height: 1.75;
       color: var(--ink);
       font-size: 16px;
+      text-rendering: optimizeLegibility;
     }
 
     .page {
@@ -32,13 +41,61 @@
       box-sizing: border-box;
     }
 
-    /* 简化后的头部区域 */
-    .hero {
+    /* 顶部名字那块 */
+    header {
       text-align: center;
-      margin: 0 auto;
-      max-width: 720px;
+      margin-bottom: 40px;
     }
 
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+      /* 中英文都走衬线 */
+      font-family: "Lora", "Noto Serif SC", serif;
+    }
+
+    header h1 span {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-left: 6px;
+      /* 中文也用衬线 */
+      font-family: "Noto Serif SC", "Songti SC", serif;
+    }
+
+    header p.links {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    header p.links a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin: 0 8px;
+    }
+
+    /* 主介绍 */
+    .intro {
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+
+    .intro h2 {
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .intro p {
+      margin-bottom: 12px;
+    }
+
+    .intro strong {
+      font-weight: 600;
+    }
 
     /* 分割线 */
     .section-divider {
@@ -47,18 +104,14 @@
       margin: 46px 0 32px;
     }
 
-    /* Research 区域 */
+    /* Section 标题 */
     .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .section-title small {
-      font-weight: 400;
-      color: var(--ink);
+      gap: 12px;
+      letter-spacing: 0.01em;
     }
 
     .notes {
@@ -68,6 +121,7 @@
       margin-bottom: 20px;
     }
 
+    /* 列表部分 */
     .pub-list {
       list-style: none;
       padding-left: 0;
@@ -80,7 +134,8 @@
     }
 
     .pub-title {
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
 
     .pub-meta {
@@ -89,9 +144,21 @@
       margin-bottom: 4px;
     }
 
-    /* 响应式调整 */
+    .pub-meta a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 小屏优化 */
     @media (max-width: 850px) {
-      .hero {
+      .page {
+        padding-top: 48px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .intro {
         max-width: 100%;
       }
     }
@@ -99,38 +166,46 @@
 </head>
 <body>
   <main class="page">
-    <header style="text-align: center; margin-bottom: 40px;">
-      <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 8px;">Jiahao Chen <span style="font-size: 1.1rem; font-weight: normal;">陈嘉豪</span></h1>
-      <p style="margin-bottom: 20px; font-size: 1rem;">
-        <a href="https://github.com/supahao" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px; margin-right: 15px;">GitHub</a> ·
-        <a href="https://scholar.google.com/citations?user=ovnrE3wAAAAJ&hl=en" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px; margin-right: 15px;">Google Scholar</a> ·
-        <a href="mailto:jiahaochen1@link.cuhk.edu.cn" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px;">Email</a>
+    <header>
+      <h1>Jiahao Chen <span>陈嘉豪</span></h1>
+      <p class="links">
+        <a href="https://github.com/supahao">GitHub</a> •
+        <a href="https://scholar.google.com/citations?user=ovnrE3wAAAAJ&hl=en">Google Scholar</a> •
+        <a href="mailto:jiahaochen1@link.cuhk.edu.cn">Email</a>
       </p>
     </header>
 
-    <div style="max-width: 720px; margin: 0 auto 60px;">
-      <h2 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 16px;">Hi 👋</h2>
-      <p style="line-height: 1.8; margin-bottom: 12px;">I'm an intern at <strong>Moonshot AI</strong> RL team (2025), and a second-year MSc student in Data Science at <strong>CUHK(SZ)</strong>.</p>
-      <p style="line-height: 1.8; margin-bottom: 0;">My research focuses on applying reinforcement learning algorithms in LLM training and post-training. I'm particularly interested in scalable methods to enhance reasoning and decision-making capabilities of language model agents.</p>
-
-      <p style="margin-top: 20px; margin-bottom: 0; line-height: 1.8;">
-        <strong>Currently, I am actively seeking full-time opportunities starting late 2025/early 2026 in LLM post-training and RL research! For potential collaborations, I am particularly excited about developing scalable RL methods to enhance language model reasoning and capability.<br/><em>Expected graduation: 2026</em></strong>
+    <div class="intro">
+      <h2>Hi 👋</h2>
+      <p>I'm an intern at <strong>Moonshot AI</strong> RL team (2025), and a second-year MSc student in Data Science at <strong>CUHK(SZ)</strong>.</p>
+      <p>My research focuses on applying reinforcement learning algorithms in LLM training and post-training. I'm particularly interested in scalable methods to enhance reasoning and decision-making capabilities of language model agents.</p>
+      <p style="margin-top: 20px;">
+        <strong>Currently, I am actively seeking full-time opportunities starting late 2025/early 2026 in LLM post-training and RL research!<br><em>Expected graduation: 2026</em></strong>
       </p>
     </div>
 
     <hr class="section-divider" />
 
     <section>
-      <div class="section-title">Research/Events</div>
+      <div class="section-title">Research / Events</div>
 
       <ul class="pub-list">
         <li class="pub-item">
           <div class="pub-title">Kimi K2 Thinking</div>
-          <div class="pub-meta">Announcement <a href="https://moonshotai.github.io/Kimi-K2/thinking.html">https://moonshotai.github.io/Kimi-K2/thinking.html</a></div>
+          <div class="pub-meta">
+            Announcement
+            <a href="https://moonshotai.github.io/Kimi-K2/thinking.html">https://moonshotai.github.io/Kimi-K2/thinking.html</a>
+          </div>
         </li>
         <li class="pub-item">
           <div class="pub-title">Kimi K2</div>
-          <div class="pub-meta">Announcement <a href="https://moonshotai.github.io/Kimi-K2/">https://moonshotai.github.io/Kimi-K2/</a> | Technical Report <a href="https://arxiv.org/pdf/2507.20534">https://arxiv.org/pdf/2507.20534</a></div>
+          <div class="pub-meta">
+            Announcement
+            <a href="https://moonshotai.github.io/Kimi-K2/">https://moonshotai.github.io/Kimi-K2/</a>
+            &nbsp;|&nbsp;
+            Technical Report
+            <a href="https://arxiv.org/pdf/2507.20534">https://arxiv.org/pdf/2507.20534</a>
+          </div>
         </li>
       </ul>
     </section>
